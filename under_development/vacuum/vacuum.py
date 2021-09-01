@@ -1,5 +1,5 @@
 import time
-import timer
+from under_development.common.timer import Timer
 
 VACUUM = 'vacuum.valetudo_robot'
 BATTERY = VACUUM + '.battery_level'
@@ -139,6 +139,3 @@ def main():
         print('ERROR OCCURED: see Valetudo logs for more information')
     else:
         print('ERROR OCCURED: see Valetudo logs for more information')
-
-if __name__ == '__main__':
-    main()
