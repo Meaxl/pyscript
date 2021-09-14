@@ -10,7 +10,7 @@ class VacuumFanSpeed(object):
 
     @fanSpeed.setter
     def fanSpeed(self, new_fanSpeed):
-        if type(new_fanSpeed) == str:
+        if type(new_fanSpeed) is str:
             self._fanSpeed = new_fanSpeed
             #state.setattr(FANSPEED_STATE_SENSOR, self._fanSpeed)
             print("state.setattr({0}, {1})".format(FANSPEED_STATE_SENSOR, self._fanSpeed))
@@ -27,7 +27,7 @@ class VacuumWaterGrade(object):
 
     @waterGrade.setter
     def waterGrade(self, new_waterGrade):
-        if type(new_waterGrade) == str:
+        if type(new_waterGrade) is str:
             self._waterGrade = new_waterGrade
             #select.select_option(entity_id=WATERGRADE_SENSOR, option=self._waterGrade)
             print("entity_id={0}, option={1}".format(WATERGRADE_SENSOR, self._waterGrade))
