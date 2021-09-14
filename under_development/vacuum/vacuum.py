@@ -94,13 +94,13 @@ def main():
     vacuum = ValetudoVacuumEntity()
     vacuum.state
 
-    if vacuum.STATE_IDLE == True or vacuum.STATE_DOCKED == True:
+    if vacuum.STATE_IDLE is True or vacuum.STATE_DOCKED is True:
         if DEBUG: print("IDLE OR DOCKED")
         if vacuum.batteryLevel >= 80:
             if DEBUG: print("CURRENT BATTERY LEVEL: {0}".format(vacuum.batteryLevel))
             # START CLEANING IF NO PERSON IS CURRENTLY AT HOME
             presence.state
-            if presence.state != True:
+            if presence.state is not True:
                 counter.totalCount
                 if counter._total_count < 1:
                     # service.call(domain="counter", name="increment", entity_id=COUNTER)
