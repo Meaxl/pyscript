@@ -23,7 +23,6 @@ class getTemperatureSensor:
             return self.f
         except Exception as e:
             return False
-            log.error(e)
 
 @service
 def cycleAllDevices():
