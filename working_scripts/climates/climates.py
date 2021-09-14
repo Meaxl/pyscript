@@ -32,7 +32,7 @@ def cycleAllDevices():
         s = EQ3BTSmartThermostat(c)
         if c == 'climate.eq3_badezimmer':
             sensorvalue = g.validateValue()
-            if sensorvalue != False:
+            if sensorvalue is not False:
                 finalvalue = sensorvalue - 0.5
                 task.unique(c)
                 s.updateCurrentTemperature(c, finalvalue)
@@ -40,7 +40,7 @@ def cycleAllDevices():
                 pass
         if c != 'climate.eq3_badezimmer':
             sensorvalue = g.validateValue()
-            if sensorvalue != False:
+            if sensorvalue is not False:
                 finalvalue = sensorvalue - 0.0
                 task.unique(c)
                 s.updateCurrentTemperature(c, finalvalue)

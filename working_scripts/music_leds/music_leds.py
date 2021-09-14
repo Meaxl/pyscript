@@ -82,7 +82,7 @@ def changePalette():
     x.randomPalette(0, 55)
     x.randomSpeed(50, 255)
     s.setEffect(x.random_palette, x.random_speed)
-    if DEBUG == True:
+    if DEBUG is True:
         log.info('Leds Music: changing effect with arguments: "{0}, {1}, {2}, {3}, {4}, {5}, {6}"'.format(s.domain, s.name, s.device_id, s.effect, s.palette, s.intensity, s.speed))
 
 @state_trigger(f'{DEPENDENT_ID} == "on"') # Turn the LEDs on if the DEPENDENT_ID is turned on
@@ -98,7 +98,7 @@ def dependentTurnedOn():
         s.setEffect(x.random_palette, x.random_speed)
         task.sleep(1)
         s.turnOn()
-        if DEBUG == True:
+        if DEBUG is True:
             log.info('Leds Music: turned on by dependent_entity with arguments: "{0}, {1}, {2}, {3}"'.format(s.domain, s.name, s.device_id, s.brightness))
     else:
         log.info('Leds Music: Unknown error happend! Maybe Leds already turned on?')
@@ -112,7 +112,7 @@ def dependentTurnedOff():
     x.dependentState()
     if x.current_state != 'off':
         s.turnOff()
-        if DEBUG == True:
+        if DEBUG is True:
             log.info('Leds Music: turned off by dependent_entity with arguments: "{0}, {1}, {2}"'.format(s.domain, s.name, s.master_id))
     else:
         log.info('Leds Music: Unknown error harrend! Maybe Leds already turned off?')
